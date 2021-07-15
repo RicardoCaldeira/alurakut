@@ -1,26 +1,48 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { AluraKutStyles } from '../src/lib/AluraCommons';
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
+	/* Reset CSS (Necolas Reset CSS)*/
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		background-color: #D9E6F6;
+		font-family: sans-serif;
+	}
+
+	#__next {
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+	}
+
+	img{
+		max-width: 100%;
+		height: auto;
+		display: block;
+	}
+
+	${AluraKutStyles}
 `
 
 const theme = {
-  colors: {
-    primary: '#0070f3',
-  },
+	colors: {
+		primary: '#0070f3',
+	},
 }
 
 export default function App({ Component, pageProps }) {
-  return (
-    <>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
-  )
+	return (
+		<>
+			<GlobalStyle />
+			<ThemeProvider theme={theme}>
+				<Component {...pageProps} />
+			</ThemeProvider>
+		</>
+	)
 }
