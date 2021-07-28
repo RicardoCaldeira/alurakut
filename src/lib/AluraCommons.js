@@ -152,7 +152,7 @@ AlurakutMenu.Wrapper = styled.header`
         color: #ffffff;
         opacity: 1;
       }
-    } 
+    }
   }
 `;
 AlurakutMenu.Logo = styled.img`
